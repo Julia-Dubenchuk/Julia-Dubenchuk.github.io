@@ -1,0 +1,162 @@
+/* Page layer for the personal site.
+ *
+ * Layout and page-scale sizing only. Every colour, font, radius and shadow
+ * comes from organic.css via var(). Nothing here hard-codes a hex, a font name,
+ * or a value the tokens already carry.
+ *
+ * Measurements follow the "Yuliia Blog" design: a 1040px column, a two-up
+ * About with a 300px sidebar, a 340px CV sidebar, pill tabs in the header, and
+ * divider rules on the writing list and footer.
+ *
+ * CONTRAST: the base terracotta measures 3.0:1 on the cream ground — a
+ * large-text and chrome value. Small terracotta text therefore takes the deep
+ * step --color-accent-700 (5.7:1). Body copy uses --color-neutral-800 (8.9:1)
+ * and secondary copy --color-neutral-700 (5.5:1).
+ */
+
+:root { --page: 1040px; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body { text-wrap: pretty; }
+svg, video { max-width: 100%; height: auto; }
+
+.page { min-height: 100vh; background: var(--color-bg); padding: 0 0 var(--space-8); }
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 var(--space-8); }
+
+a { color: var(--color-accent-700); text-decoration: none; }
+a:hover { color: var(--color-accent-600); text-decoration: underline; }
+
+/* — header — */
+.masthead {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-6); flex-wrap: wrap;
+  max-width: var(--page); margin: 0 auto;
+  padding: var(--space-6) var(--space-8) var(--space-4);
+}
+.brand { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; color: inherit; }
+.brand:hover { text-decoration: none; }
+.brand__mark {
+  width: 34px; height: 34px; border-radius: 999px; background: var(--color-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); color: var(--color-bg);
+  font-size: 16px; line-height: 1; padding-top: 2px; flex: none;
+}
+.brand__name { font-family: var(--font-heading); font-size: 19px; }
+
+.tabs { display: flex; gap: var(--space-1); align-items: center; flex-wrap: wrap; }
+.tab {
+  font-family: var(--font-body); font-size: 15.5px; font-weight: 600;
+  padding: 9px 18px; border-radius: 999px; border: none; cursor: pointer;
+  background: transparent; color: var(--color-neutral-800); text-decoration: none;
+}
+.tab:hover { background: var(--color-accent-200); color: var(--color-neutral-900); text-decoration: none; }
+.tab[aria-current="page"] { background: var(--color-accent); color: var(--color-text); }
+
+/* ── ONE DELIBERATE DEVIATION FROM THE DESIGN ──────────────────────────────
+   The design sets white on the active tab, and the system sets cream on
+   .btn-primary. Both sit on the base terracotta and measure ~3:1 — fine by the
+   system's own note for chrome and large text, but below the 4.5:1 an audit
+   applies to a 14–15.5px label, which would cost the accessibility score.
+   Ink on the same terracotta reads 4.60:1 and keeps the fill colour exactly.
+   Applied to the tab and the primary button together so they stay consistent.
+   To restore the design verbatim, delete this block. */
+.btn-primary { color: var(--color-text); }
+.btn-primary:hover, .btn-primary:active { color: var(--color-bg); }
+
+/* Same reason, two more places — both are small text on the card surface:
+   .card-meta ships at 50% ink (2.99:1) and .card-kicker at the base terracotta
+   (2.69:1). The system's own readme says paragraph-size accent text should take
+   a deep ramp step, so the kicker follows that guidance rather than departing
+   from it; the meta line moves to neutral-700. Same ramps, same family, both
+   now past 4.5:1. Delete with the block above to restore the design verbatim. */
+.card-kicker { color: var(--color-accent-700); }
+.card-meta { color: var(--color-neutral-700); }
+
+/* — shared page furniture — */
+.section { padding: var(--space-8) 0 0; }
+.page-title { font-family: var(--font-heading); font-weight: 400; font-size: 46px; line-height: 1.05; margin: 0 0 var(--space-3); }
+.page-lead { font-size: 18px; line-height: 1.6; margin: 0 0 var(--space-8); max-width: 52ch; color: var(--color-neutral-800); }
+.kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent-700); font-weight: 600; }
+
+/* — about — */
+.about { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-8); align-items: start; padding: var(--space-8) 0 0; }
+.about__kicker { margin: 0 0 var(--space-3); }
+.about__name { font-family: var(--font-heading); font-weight: 400; font-size: 58px; line-height: 1.02; margin: 0 0 var(--space-4); }
+.about__intro { font-size: 20px; line-height: 1.5; margin: 0 0 var(--space-6); max-width: 34ch; color: var(--color-neutral-800); }
+.about__tags { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: 0 0 var(--space-8); list-style: none; padding: 0; }
+.prose { max-width: 58ch; font-size: 17px; line-height: 1.72; color: var(--color-neutral-800); }
+.prose p { margin: 0 0 var(--space-4); }
+.prose p:last-child { margin-bottom: 0; }
+
+.sidebar { display: flex; flex-direction: column; gap: var(--space-4); position: sticky; top: var(--space-6); }
+.avatar { border-radius: 999px; overflow: hidden; background: var(--color-neutral-300); aspect-ratio: 1; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sidecard__note { margin: 0 0 var(--space-3); font-size: 14px; line-height: 1.5; color: var(--color-neutral-700); }
+.cat { display: flex; align-items: center; gap: var(--space-3); }
+.cat__frame { width: 92px; height: 92px; border-radius: 999px; overflow: hidden; flex: none; background: var(--color-neutral-300); }
+.cat__frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cat__caption { margin: 0; font-size: 14px; line-height: 1.5; color: var(--color-neutral-700); }
+
+/* — activities — */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); list-style: none; margin: 0; padding: 0; }
+.project { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+.project:hover { box-shadow: var(--shadow-md); }
+.project__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.project__dot { width: 42px; height: 42px; border-radius: 999px; flex: none; }
+.project__title { margin: 0; font-size: 24px; }
+.project__blurb { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--color-neutral-800); }
+.project__meta { margin: auto 0 0; }
+.note { margin: var(--space-8) 0 0; font-size: 15px; color: var(--color-neutral-700); }
+
+/* — writing elsewhere (outbound link list) — */
+.elsewhere { max-width: 720px; }
+.posts { display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; }
+.post-link {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-6) 0; border-top: 1px solid var(--color-divider);
+  text-decoration: none; color: inherit;
+}
+.post-link:hover { background: var(--color-accent-100); text-decoration: none; }
+.post-link__meta { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent-700); font-weight: 600; }
+.post-link__title { font-family: var(--font-heading); font-size: 27px; line-height: 1.15; }
+.post-link__excerpt { font-size: 16px; line-height: 1.6; color: var(--color-neutral-800); }
+
+/* — cv — */
+.cv { display: grid; grid-template-columns: 1fr 340px; gap: var(--space-8); align-items: start; padding: var(--space-8) 0 0; }
+.cv__lead { font-size: 18px; line-height: 1.6; margin: 0 0 var(--space-8); max-width: 48ch; color: var(--color-neutral-800); }
+.cv__rows { display: grid; grid-template-columns: 150px 1fr; gap: var(--space-4) var(--space-6); margin: 0; font-size: 16.5px; line-height: 1.6; }
+.cv__rows dt { font-weight: 600; color: var(--color-accent-700); }
+.cv__rows dd { margin: 0; color: var(--color-neutral-800); }
+.cv__panel { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); position: sticky; top: var(--space-6); }
+.cv__filename { font-family: var(--font-heading); font-weight: 400; font-size: 24px; margin: 0; }
+.cv__meta { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--color-neutral-700); }
+
+/* Format switch with no JavaScript: the checked radio reveals its own download
+   link. :has() is already how the system styles .seg-opt, so this uses the
+   mechanism the design system itself relies on. */
+.cv__dl { display: grid; }
+.cv__dl .btn { grid-area: 1 / 1; }
+.cv__panel:has(#fmt-pdf:checked) .dl-docx,
+.cv__panel:has(#fmt-docx:checked) .dl-pdf { visibility: hidden; pointer-events: none; }
+
+/* — footer — */
+.sitefooter {
+  max-width: var(--page); margin: var(--space-8) auto 0;
+  padding: var(--space-6) var(--space-8) 0;
+  border-top: 1px solid var(--color-divider);
+  display: flex; gap: var(--space-6); flex-wrap: wrap;
+  font-size: 15px; color: var(--color-neutral-700);
+}
+
+@media (max-width: 880px) {
+  .about, .cv { grid-template-columns: 1fr; }
+  .sidebar, .cv__panel { position: static; }
+  .about__name { font-size: 44px; }
+  .page-title { font-size: 36px; }
+}
+@media (max-width: 560px) {
+  .cv__rows { grid-template-columns: 1fr; gap: var(--space-2) 0; }
+  .cv__rows dd { margin-bottom: var(--space-2); }
+}

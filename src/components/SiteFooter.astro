@@ -1,0 +1,8 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="sitefooter">
+  <span>{site.copyright}</span>
+  {site.socials.map((s) => <a href={s.href} rel="noopener">{s.label}</a>)}
+</footer>

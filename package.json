@@ -1,0 +1,22 @@
+{
+  "name": "personal-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/check-paths.mjs",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "verify:paths": "node scripts/check-paths.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.10",
+    "astro": "7.2.10",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site, cvRows } from "../data/site";
+import { withBase } from "../data/urls";
+
+// The design showed file sizes ("240 KB" / "96 KB"), but those were mock
+// numbers. Reading real sizes needs node types as a new dependency, and
+// hardcoding invented ones would be worse than omitting them — so the panel
+// states format and date only, which it can always tell the truth about.
+---
+
+<BaseLayout
+  path="/cv"
+  title={`CV — ${site.name}`}
+  description="Front-End Developer, 7+ years. React and TypeScript, growing into full-stack."
+>
+  <div class="wrap">
+    <section class="cv" aria-labelledby="cv-heading">
+      <div>
+        <h1 id="cv-heading" class="page-title" style="margin-bottom:var(--space-4)">My CV</h1>
+        <p class="cv__lead">{site.cv.lead}</p>
+        <dl class="cv__rows">
+          {cvRows.map((row) => (<><dt>{row.k}</dt><dd>{row.v}</dd></>))}
+        </dl>
+      </div>
+
+      <div class="card elev-md cv__panel">
+        <div>
+          <p class="card-kicker">Download</p>
+          <h2 class="cv__filename">{site.cv.fileStem}</h2>
+        </div>
+
+        {/*
+          The design's format switch, with no JavaScript: each radio reveals its
+          own download link via :has(), which is the same mechanism the design
+          system already uses to style .seg-opt.
+        */}
+        <div class="field">
+          <label for="fmt-pdf">Format</label>
+          <div class="seg">
+            <label class="seg-opt">
+              <input id="fmt-pdf" type="radio" name="cv-format" value="PDF" checked />PDF
+            </label>
+            <label class="seg-opt">
+              <input id="fmt-docx" type="radio" name="cv-format" value="DOCX" />DOCX
+            </label>
+          </div>
+        </div>
+
+        <div class="cv__dl">
+          <a class="btn btn-primary btn-block dl-pdf"
+             href={withBase(`/cv/${site.cv.fileStem}.pdf`)} download>Download PDF</a>
+          <a class="btn btn-primary btn-block dl-docx"
+             href={withBase(`/cv/${site.cv.fileStem}.docx`)} download>Download DOCX</a>
+        </div>
+
+        <p class="cv__meta">
+          PDF or DOCX · updated {site.cv.updated}. Both are PLACEHOLDER files —
+          replace them in <code>public/cv/</code>.
+        </p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

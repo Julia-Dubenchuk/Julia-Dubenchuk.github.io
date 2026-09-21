@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { site } from "../data/site";
+import { elsewhere, elsewhereLead } from "../data/elsewhere";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+);
+
+const posts = [...elsewhere].sort((a, b) => b.date.localeCompare(a.date));
+const monthYear = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+---
+
+<BaseLayout
+  path="/activities"
+  title={`My other activities — ${site.name}`}
+  description="Side projects and writing published elsewhere."
+>
+  <div class="wrap">
+    <section class="section" aria-labelledby="activities-heading">
+      <h1 id="activities-heading" class="page-title">My other activities</h1>
+      <p class="page-lead">
+        Side projects, mostly. Things I build to learn something specific, then
+        keep using.
+      </p>
+      <ul class="project-grid">
+        {
+          projects.map((p) => (
+            <ProjectCard
+              name={p.data.name}
+              blurb={p.data.blurb}
+              stack={p.data.stack}
+              status={p.data.status}
+              dot={p.data.dot}
+            />
+          ))
+        }
+      </ul>
+      <p class="note">
+        Placeholder projects — replace them in <code>src/content/projects.yaml</code>.
+      </p>
+    </section>
+
+    <section class="section elsewhere" aria-labelledby="elsewhere-heading">
+      <h2
+        id="elsewhere-heading"
+        class="page-title"
+        style="font-size:34px; margin-bottom:var(--space-3)"
+      >
+        Writing elsewhere
+      </h2>
+      <p class="page-lead">{elsewhereLead}</p>
+      <ul class="posts">
+        {
+          posts.map((post) => (
+            <li>
+              <a
+                class="post-link"
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="post-link__meta">
+                  {monthYear(post.date)} · LinkedIn
+                </span>
+                <span class="post-link__title">{post.title}</span>
+                {post.excerpt && (
+                  <span class="post-link__excerpt">{post.excerpt}</span>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

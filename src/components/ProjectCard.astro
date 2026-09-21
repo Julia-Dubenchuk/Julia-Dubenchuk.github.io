@@ -1,0 +1,23 @@
+---
+interface Props {
+  name: string;
+  blurb: string;
+  stack: string;
+  status: string;
+  dot: string;
+}
+const { name, blurb, stack, status, dot } = Astro.props;
+// The tint is chosen from a fixed set in the schema, so this maps to a token
+// rather than accepting an arbitrary colour.
+const dotColor = `var(--color-${dot})`;
+---
+
+<li class="card elev-sm project">
+  <div class="project__top">
+    <span class="project__dot" style={`background:${dotColor}`} aria-hidden="true"></span>
+    <span class="tag tag-neutral">{status}</span>
+  </div>
+  <h2 class="card-title project__title">{name}</h2>
+  <p class="project__blurb">{blurb}</p>
+  <p class="card-meta project__meta">{stack}</p>
+</li>

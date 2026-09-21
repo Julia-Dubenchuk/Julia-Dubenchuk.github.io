@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+import { withBase } from "../data/urls";
+
+const { heading, body, linkLabel } = site.notFound;
+---
+
+<BaseLayout title={`${heading} — ${site.name}`} path="/404">
+  <div class="wrap">
+    <section class="section" aria-labelledby="nf-heading">
+      <h1 id="nf-heading" class="page-title">{heading}</h1>
+      <p class="page-lead">{body}</p>
+      <p><a class="btn btn-primary" href={withBase("/")}>{linkLabel}</a></p>
+    </section>
+  </div>
+</BaseLayout>

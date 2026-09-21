@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import About from "../components/About.astro";
+import { site } from "../data/site";
+import { withBase } from "../data/urls";
+import avatar from "../assets/yuliia-avatar.png";
+import cat from "../assets/cat-tight.png";
+
+const tagClass = { accent: "tag-accent", "accent-2": "tag-accent-2", outline: "tag-outline" } as const;
+---
+
+<BaseLayout path="/">
+  <div class="wrap">
+    <section class="about" aria-labelledby="about-heading">
+      <div>
+        <p class="kicker about__kicker">{site.heroKicker}</p>
+        <h1 id="about-heading" class="about__name">{site.name}</h1>
+        <p class="about__intro">{site.intro}</p>
+        <ul class="about__tags">
+          {site.tags.map((t) => <li class={`tag ${tagClass[t.tone]}`}>{t.label}</li>)}
+        </ul>
+        <About />
+      </div>
+
+      <aside class="sidebar" aria-label="Profile">
+        <div class="avatar washed">
+          <Image src={avatar} alt={site.name} widths={[300, 370]} sizes="300px" />
+        </div>
+
+        <div class="card elev-sm">
+          <p class="card-kicker">Curriculum vitae</p>
+          <p class="sidecard__note">{site.cv.blurb}</p>
+          <a class="btn btn-primary btn-block" href={withBase("/cv")}>Download my CV</a>
+        </div>
+
+        <div class="cat">
+          <div class="cat__frame washed">
+            <Image src={cat} alt="A sleeping ginger cat" widths={[92, 184]} sizes="92px" />
+          </div>
+          <p class="cat__caption">{site.catCaption}</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+</BaseLayout>

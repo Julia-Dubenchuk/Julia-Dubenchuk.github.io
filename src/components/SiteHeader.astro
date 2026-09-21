@@ -1,0 +1,39 @@
+---
+import { site } from "../data/site";
+import { nav } from "../data/nav";
+import { withBase } from "../data/urls";
+
+// Real links, not client-side tabs. The current one is marked with
+// aria-current, which is both the accessible signal and the style hook.
+const norm = (p: string) => p.replace(/\/+$/, "");
+const here = norm(Astro.url.pathname);
+const root = norm(withBase("/"));
+const isCurrent = (href: string) => {
+  const target = norm(withBase(href));
+  // The root href is a prefix of every other route, so it only ever matches
+  // exactly. Deeper routes also match their children, so a nested page such as
+  // /notes/<slug> would keep its parent tab marked.
+  if (target === root) return here === root;
+  return here === target || here.startsWith(`${target}/`);
+};
+---
+
+<header class="masthead">
+  <a class="brand" href={withBase("/")}>
+    <span class="brand__mark" aria-hidden="true">{site.initial}</span>
+    <span class="brand__name">{site.name}</span>
+  </a>
+  <nav class="tabs" aria-label="Primary">
+    {
+      nav.map((entry) => (
+        <a
+          class="tab"
+          href={withBase(entry.href)}
+          aria-current={isCurrent(entry.href) ? "page" : undefined}
+        >
+          {entry.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

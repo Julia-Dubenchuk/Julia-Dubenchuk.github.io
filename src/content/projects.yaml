@@ -1,0 +1,38 @@
+# Side projects, shown on /activities.
+# Add an entry by copying a block — the grid reflows on its own, no template edit.
+# Required: id, name, blurb, stack, status, dot.
+# dot picks the round mark's tint: accent-300 | accent-2-300 | accent-200 | accent-2-200
+#
+# These four are the design's placeholders. Replace them with the real ones.
+
+- id: side-project-one
+  name: "Side project one"
+  blurb: "A placeholder card. Tell me what this one is and what you learned building it."
+  stack: "React · TypeScript"
+  status: "Live"
+  dot: accent-300
+  order: 1
+
+- id: side-project-two
+  name: "Side project two"
+  blurb: "Room for a second project — something server-side, if that fits the story you want to tell."
+  stack: "NestJS · Postgres"
+  status: "In progress"
+  dot: accent-2-300
+  order: 2
+
+- id: side-project-three
+  name: "Side project three"
+  blurb: "A smaller experiment. Short blurbs read better here than full case studies."
+  stack: "Node.js"
+  status: "Archived"
+  dot: accent-200
+  order: 3
+
+- id: side-project-four
+  name: "Side project four"
+  blurb: "Add or remove cards freely — the grid reflows on its own."
+  stack: "React Native"
+  status: "Live"
+  dot: accent-2-200
+  order: 4

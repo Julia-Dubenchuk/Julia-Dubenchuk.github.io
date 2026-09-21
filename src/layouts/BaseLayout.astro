@@ -1,0 +1,62 @@
+---
+import { site } from "../data/site";
+import { absoluteUrl, withBase } from "../data/urls";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/organic.css";
+import "../styles/site.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+}
+const {
+  title = site.metaTitle,
+  description = site.metaDescription,
+  path = "/",
+} = Astro.props;
+
+// absoluteUrl, not withBase: canonical, og:url and og:image need a full origin.
+// A base-relative og:image fails silently on every social scraper — no build
+// error, no console warning, just a blank card.
+const canonical = absoluteUrl(path);
+const ogImage = absoluteUrl("/og-image.png");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+
+    {/* The Organic system's two faces. This is the <link> form of the @import
+        the vendored stylesheet opens with — see the note atop organic.css. */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={site.ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div class="page">
+      <SiteHeader />
+      <main id="main">
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
