@@ -83,10 +83,10 @@ v1 is done when all of the following are true. Current status is honest, not asp
   Actions workflow; the production URL loads over HTTPS — *never deployed*
 - [x] **About prose.** About renders long-form prose from a single editable content file, not a
   bullet list
-- [ ] **CV download.** A visible CV download serves a real file from a fixed path; replacing it
-  needs no code change — *structure met, content not: the files are placeholders*
-- [ ] **Projects from data.** Projects render from a structured data file; adding one needs no
-  template edit — *structure met, content not: the four entries are sample data*
+- [x] **CV download.** A visible CV download serves a real file from a fixed path; replacing it
+  needs no code change
+- [x] **Projects from data.** Projects render from a structured data file; adding one needs no
+  template edit — *one real project; the sample entries have been removed rather than replaced*
 - [ ] **Personal content.** Non-technical, personal content is present and visually distinct from
   the project grid — *partly met: thin; currently one photograph and its caption*
 - [x] **Honest placeholders.** Every unfilled content slot ships as an obvious labelled
@@ -98,9 +98,9 @@ v1 is done when all of the following are true. Current status is honest, not asp
   *the OG image and favicon are placeholders*
 - [x] **Extensible.** A later content surface can be added without restructuring the existing pages
 
-**The remaining work is content, not code:** write the CV, replace the four sample projects,
-replace two placeholder images, deploy. Every one of those is the personal-voice work §2 reserves
-to Yuliia.
+**The remaining work is content, not code:** replace two placeholder images and grow the personal,
+non-technical half. Every one of those is the personal-voice work §2 reserves to Yuliia. The CV,
+the first project and the deploy are done.
 
 ## 7. Constraints that shaped it
 

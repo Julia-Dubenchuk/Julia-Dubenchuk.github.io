@@ -34,10 +34,12 @@ answer of `-` means genuinely undecided, not forgotten.
 - Q: Who writes the prose?
 - A: Yuliia, all of it. Ghost-drafting was proposed and rejected: the voice is the product
   (00 §2).
-- Q: When are the four sample projects in `src/content/projects.yaml` replaced with real ones?
-- A: -
+- Q: What happened to the four sample projects in `src/content/projects.yaml`?
+- A: Deleted. One real entry — Progress Path — stands alone, because there is only one side
+  project worth showing and padding the grid with invented ones would be the filler §8 of 06
+  forbids.
 - Q: When do the real CV files replace the placeholders in `public/cv/`?
-- A: -
+- A: Done. Both formats carry the real CV, with no phone number in either.
 - Q: When are the OG image and favicon replaced?
 - A: - They ship as labelled placeholders until then (00 §6, criterion 9).
 - Q: Is one photograph and its caption enough non-technical content?
