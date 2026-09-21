@@ -5,8 +5,13 @@ interface Props {
   stack: string;
   status: string;
   dot: string;
+  link?: string;
 }
-const { name, blurb, stack, status, dot } = Astro.props;
+const { name, blurb, stack, status, dot, link } = Astro.props;
+// One optional outbound link per card. The label names where it goes, since
+// "link" on its own tells a screen reader nothing.
+const host = link ? new URL(link).hostname.replace(/^www\./, "") : null;
+const linkLabel = host === "github.com" ? "Source on GitHub" : `Visit ${host}`;
 // The tint is chosen from a fixed set in the schema, so this maps to a token
 // rather than accepting an arbitrary colour.
 const dotColor = `var(--color-${dot})`;
@@ -20,4 +25,19 @@ const dotColor = `var(--color-${dot})`;
   <h2 class="card-title project__title">{name}</h2>
   <p class="project__blurb">{blurb}</p>
   <p class="card-meta project__meta">{stack}</p>
+  {
+    link && (
+      <p class="project__link">
+        <a
+          class="btn btn-ghost"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} — ${linkLabel}`}
+        >
+          {linkLabel}
+        </a>
+      </p>
+    )
+  }
 </li>

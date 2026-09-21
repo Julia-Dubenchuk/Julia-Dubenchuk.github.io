@@ -108,6 +108,7 @@ a:hover { color: var(--color-accent-600); text-decoration: underline; }
 .project__title { margin: 0; font-size: 24px; }
 .project__blurb { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--color-neutral-800); }
 .project__meta { margin: auto 0 0; }
+.project__link { margin: 0; }
 .note { margin: var(--space-8) 0 0; font-size: 15px; color: var(--color-neutral-700); }
 
 /* — writing elsewhere (outbound link list) — */

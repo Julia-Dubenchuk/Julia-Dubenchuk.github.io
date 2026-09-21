@@ -1,9 +1,9 @@
 # Side projects, shown on /activities.
 # Add an entry by copying a block — the grid reflows on its own, no template edit.
-# Required: id, name, blurb, stack, status, dot.
+# Required: id, name, blurb, stack, status, dot. Optional: link, order.
 # dot picks the round mark's tint: accent-300 | accent-2-300 | accent-200 | accent-2-200
 #
-# These four are the design's placeholders. Replace them with the real ones.
+# Three of these are still the design's placeholders. Replace them with the real ones.
 
 - id: side-project-one
   name: "Side project one"
@@ -13,12 +13,13 @@
   dot: accent-300
   order: 1
 
-- id: side-project-two
-  name: "Side project two"
-  blurb: "Room for a second project — something server-side, if that fits the story you want to tell."
-  stack: "NestJS · Postgres"
+- id: progress-path
+  name: "Progress Path"
+  blurb: "Personal productivity application built to expand backend expertise — authentication, password reset, role-based access control, and database design."
+  stack: "NestJS · PostgreSQL · TypeORM · Docker"
   status: "In progress"
   dot: accent-2-300
+  link: "https://github.com/Julia-Dubenchuk/progress-path"
   order: 2
 
 - id: side-project-three

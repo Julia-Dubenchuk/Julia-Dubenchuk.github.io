@@ -60,8 +60,10 @@ Nothing here requires editing a component.
 
 **Adding a project** — copy a block in `projects.yaml`. Each needs a unique `id`,
 plus `name`, `blurb`, `stack`, `status`, and `dot` (which tint the round mark
-takes: `accent-300`, `accent-2-300`, `accent-200`, or `accent-2-200`). The grid
-reflows on its own.
+takes: `accent-300`, `accent-2-300`, `accent-200`, or `accent-2-200`). Optional:
+`link`, a full URL to the repository or the running project — the card labels it
+*Source on GitHub* for a github.com URL and *Visit <host>* otherwise — and
+`order`. The grid reflows on its own.
 
 **Adding a link to writing elsewhere** — append an entry to `elsewhere` in
 `src/data/elsewhere.ts` with `title`, `date` (ISO, e.g. `2026-09-02`), `href`,

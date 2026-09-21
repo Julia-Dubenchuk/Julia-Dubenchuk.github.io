@@ -47,8 +47,9 @@ content rather than mixed into it.
 `/activities` must render side projects as a card grid from `src/content/projects.yaml`.
 
 Adding, removing or reordering a project must require editing that file only. Each entry carries
-`id`, `name`, `blurb`, `stack`, `status`, `dot`, and an optional `order`; the grid reflows on its
-own.
+`id`, `name`, `blurb`, `stack`, `status`, `dot`, and optional `link` and `order`; the grid reflows
+on its own. A card with a `link` renders one outbound anchor, labelled by its host and carrying the
+project name in its `aria-label`.
 
 ## FR-004 Writing elsewhere
 

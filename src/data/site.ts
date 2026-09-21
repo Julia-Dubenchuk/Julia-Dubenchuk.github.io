@@ -73,5 +73,5 @@ export const cvRows: { k: string; v: string }[] = [
   { k: "Core", v: "React, TypeScript, modern CSS, testing" },
   { k: "Server-side", v: "Node.js, NestJS, REST APIs, Postgres" },
   { k: "Based in", v: "Ukraine — open to remote" },
-  { k: "Languages", v: "Ukrainian (native), English (fluent)" },
+  { k: "Languages", v: "Ukrainian (native), English (Upper-Intermediate, B2)" },
 ];

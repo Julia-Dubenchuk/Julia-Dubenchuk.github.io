@@ -23,6 +23,8 @@ const projects = defineCollection({
     status: z.string(),
     /** Which tint the round mark takes. */
     dot: z.enum(["accent-300", "accent-2-300", "accent-200", "accent-2-200"]),
+    /** Optional outbound link — source repository, or the running project. */
+    link: z.string().url().optional(),
     order: z.number().optional(),
   }),
 });
