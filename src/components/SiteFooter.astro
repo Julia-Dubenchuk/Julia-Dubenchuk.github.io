@@ -1,8 +1,20 @@
 ---
 import { site } from "../data/site";
+// Outbound links open in a new tab; mailto: has no tab to open, so it keeps
+// the current one.
 ---
 
 <footer class="sitefooter">
   <span>{site.copyright}</span>
-  {site.socials.map((s) => <a href={s.href} rel="noopener">{s.label}</a>)}
+  {
+    site.socials.map((s) => (
+      <a
+        href={s.href}
+        target={s.href.startsWith("http") ? "_blank" : undefined}
+        rel="noopener noreferrer"
+      >
+        {s.label}
+      </a>
+    ))
+  }
 </footer>
