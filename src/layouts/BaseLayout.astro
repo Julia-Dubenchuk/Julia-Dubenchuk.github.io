@@ -36,6 +36,13 @@ const ogImage = absoluteUrl("/og-card.png");
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {/* Google Search Console ownership proof. Search Console checks the site
+        root, but the tag is harmless on every page and stays put if the
+        verified property ever changes. */}
+    <meta
+      name="google-site-verification"
+      content="f5OAAwksfdw9kJM5Zho42WPU8wMYCP0qjH30dFQFNMY"
+    />
     <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
     <link rel="icon" type="image/png" sizes="16x16" href={withBase("/favicon-16.png")} />
     <link rel="apple-touch-icon" href={withBase("/favicon-180.png")} />
