@@ -3,7 +3,22 @@
 ## Status
 
 **Accepted.** Conditional — §8 states the condition and the triggers that would reopen it.
-Superseded by: none.
+Superseded by: none. **Premise amended — see the note below.**
+
+> **Premise amended, 2026-09-21.** This record was written while a blog surface was still planned
+> for v2, and calls the site "the blog" throughout. `00-tech-spec.md` §4 has since declined blog
+> posts on this site **entirely**, not deferred them: longer writing is published on LinkedIn and
+> linked from `/activities`. Read every "the blog" here as *this content site* — the Astro-rendered
+> pages at the origin root — rather than a posts surface that exists.
+>
+> **The decision is unaffected.** It turns on the content-versus-application axis (§8), and
+> dropping the posts surface moves the site further toward the content end, which is exactly where
+> Astro was chosen to sit. The two-surface recommendation in §4 and §8 stands unchanged, read the
+> same way: the content site stays on Astro, and an app-shaped surface is built beside it rather
+> than folded into it.
+>
+> Amended rather than rewritten, because a reversal belongs in the decision it reverses
+> (`03-nfr.md`, Auditability).
 
 ## Decision
 
