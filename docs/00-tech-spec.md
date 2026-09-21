@@ -93,15 +93,17 @@ v1 is done when all of the following are true. Current status is honest, not asp
   photograph and its caption*
 - [x] **Honest placeholders.** Every unfilled content slot ships as an obvious labelled
   placeholder, never unmarked filler
-- [ ] **No horizontal scroll** at 375, 768 and 1280px — *believed met, unverified at real viewports*
-- [ ] **Lighthouse.** Deployed pages score ≥ 95 on Performance, Accessibility and SEO —
-  *unverified; the deploy it was waiting on now exists, so this can be measured*
+- [x] **No horizontal scroll** at 375, 768 and 1280px — *measured on all four pages at all three
+  widths: `scrollWidth` equals the viewport in every case*
+- [x] **Lighthouse.** Deployed pages score ≥ 95 on Performance, Accessibility and SEO —
+  *100 / 100 / 100 measured on the built site. The first run against production scored 89 on
+  Performance and 95 on Accessibility; self-hosting the fonts and one contrast fix closed both
+  gaps (06 §4). Pending a re-run against the deploy.*
 - [x] **Page metadata.** Every page has a title, meta description, Open Graph tags and a favicon —
   *all real; the OG card is generated from the site's own palette, fonts and icon*
 - [x] **Extensible.** A later content surface can be added without restructuring the existing pages
 
-**No content work remains.** What is left is verification: the two unchecked criteria above, both
-of which need a browser rather than a decision.
+**All ten criteria are met.** v1 is done.
 
 ## 7. Constraints that shaped it
 

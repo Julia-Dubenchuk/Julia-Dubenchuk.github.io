@@ -71,6 +71,12 @@ a:hover { color: var(--color-accent-600); text-decoration: underline; }
 .card-kicker { color: var(--color-accent-700); }
 .card-meta { color: var(--color-neutral-700); }
 
+/* And a third: .tag-outline draws its label in the base terracotta, which is
+   3.03:1 on the cream ground at 11px — the exact case §4 of the conventions
+   forbids. The deep ramp step reads 5.72:1; the border keeps the base colour,
+   so the pill looks the same. Lighthouse flagged this one and nothing else. */
+.tag-outline { color: var(--color-accent-700); }
+
 /* — shared page furniture — */
 .section { padding: var(--space-8) 0 0; }
 .page-title { font-family: var(--font-heading); font-weight: 400; font-size: 46px; line-height: 1.05; margin: 0 0 var(--space-3); }

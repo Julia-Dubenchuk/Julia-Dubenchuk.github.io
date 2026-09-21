@@ -3,6 +3,7 @@ import { site } from "../data/site";
 import { absoluteUrl, withBase } from "../data/urls";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/fonts.css";
 import "../styles/organic.css";
 import "../styles/site.css";
 
@@ -35,15 +36,6 @@ const ogImage = absoluteUrl("/og-image.png");
     <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
     <link rel="icon" type="image/png" sizes="16x16" href={withBase("/favicon-16.png")} />
     <link rel="apple-touch-icon" href={withBase("/favicon-180.png")} />
-
-    {/* The Organic system's two faces. This is the <link> form of the @import
-        the vendored stylesheet opens with — see the note atop organic.css. */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap"
-    />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

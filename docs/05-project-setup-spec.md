@@ -126,7 +126,8 @@ personal-voice writing `00-tech-spec.md` §2 reserves to her.
   from stored URLs.
 - **Alternatives:** LinkedIn embed iframes — rejected: six tracking cookies per visitor, ~30 KB
   plus four external scripts, and a fixed width that breaks the 375px layout.
-- **Consequence:** the site sets no cookies and has one third-party origin, Google Fonts.
+- **Consequence:** the site sets no cookies and, since the fonts were self-hosted, makes no
+  third-party request at all.
 
 ## Constraints
 
@@ -177,7 +178,7 @@ personal-voice writing `00-tech-spec.md` §2 reserves to her.
 | The biography could be ghost-drafted | The voice *is* the product | All prose written by Yuliia; empty slots ship as loud placeholders |
 | Deployed as a project page under a subpath | The repo is named `Julia-Dubenchuk.github.io` | User site at the origin root; `BASE_PATH` is `""`, `withBase()` kept as the seam |
 | LinkedIn posts could be embedded | Measured: six cookies, ~30 KB, four scripts, breaks 375px | Outbound links with `utm_*` and `rcm` stripped |
-| Fonts load via the design system's `@import` | Blocks on the CSS request chain | Moved to a `<link>` with preconnect in `BaseLayout.astro` (06 §4) |
+| Fonts load via the design system's `@import` | Blocks on the CSS request chain; Lighthouse measured 847ms | Self-hosted woff2 in `src/styles/fonts.css`; no third-party request (06 §4) |
 | The CV is the hero element | A CV is what a profile already gives you | Demoted: present, easy to find, not the primary call to action |
 | Next.js would serve this better | Rated against the actual surface | Astro; the revisit condition is written down instead of assumed (decision 0001 §8) |
 

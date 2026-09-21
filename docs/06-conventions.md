@@ -55,19 +55,28 @@ redesign a token change rather than a search-and-replace.
 
 ## 4. Deviations from the design system are documented where they occur
 
-There are exactly two today, both marked in the code:
+There are exactly three today, all marked in the code:
 
-1. **Font loading.** The Google Fonts `@import` moved to a `<link>` in `BaseLayout.astro`, because
-   Astro bundles the stylesheet and a CSS `@import` is only valid at the top of the resulting
-   sheet. No token or class changed.
+1. **Font loading.** The Google Fonts `@import` became a `<link>`, and then went away entirely:
+   the two faces are vendored as woff2 in `src/assets/fonts/` and declared in
+   `src/styles/fonts.css`, which is Google's own css2 output with the gstatic URLs rewritten. The
+   measurement that forced it: the stylesheet was render-blocking, costing 847ms with an estimated
+   1,650ms of savings, and held Lighthouse Performance at 89 against a 95 target. Self-hosting took
+   it to 100 and removed the site's last third-party origin. No token or class changed.
 2. **Contrast corrections**, in one marked block at the end of `site.css`. The design's active tab
    (white on terracotta), the system's `.btn-primary` (cream on terracotta), `.card-kicker` and
    `.card-meta` all measure around 3:1 — acceptable by the system's own note for chrome and large
    text, but below the 4.5:1 an accessibility audit applies to small labels. They now use ink and
    the deep ramp steps, which keeps every fill colour exactly and reads 4.6–5.1:1.
 
-**The rule: a third deviation gets documented the same way** — a marked block, the measurement that
-justified it, and a sentence saying what deleting the block restores. An undocumented deviation is
+3. **`.tag-outline`'s label**, in the same block. The system draws it in the base terracotta,
+   which is 3.03:1 on the cream ground at 11px — the exact case the standing rule below forbids.
+   It takes `--color-accent-700` (5.72:1); the border keeps the base colour, so the pill is
+   unchanged to look at. Lighthouse flagged this one and nothing else, and fixing it took
+   Accessibility from 95 to 100.
+
+**The rule: a fourth deviation gets documented the same way** — a marked block, the measurement
+that justified it, and a sentence saying what deleting the block restores. An undocumented deviation is
 indistinguishable from a mistake six months later.
 
 **Contrast, as a standing rule:** small terracotta text takes `--color-accent-700` (5.7:1 on the

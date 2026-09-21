@@ -18,7 +18,8 @@ Minimal NFR set for v1 and early life as a published site.
 - Published site size: 168 KB built, against GitHub Pages' 1 GB limit
 - Page weight: the heaviest page is About at roughly **55 KB** on a first visit — 4 KB HTML,
   14 KB CSS, ~36 KB of WebP images. A repeat visit is about 4 KB, because everything else is
-  cached. Web fonts are served by `fonts.gstatic.com` and do not count against Pages at all.
+  cached. The web fonts are self-hosted, so they count against Pages like any other asset —
+  four woff2 files, 54 KB in total, fetched once and then cached.
 - **Visitors: the 100 GB/month Pages bandwidth allowance covers on the order of 1.5 million
   first-time page views a month** — roughly 1 million three-page sessions, or a sustained
   30,000 visitors a day, every day, before the soft limit is in sight
@@ -33,8 +34,8 @@ Minimal NFR set for v1 and early life as a published site.
 
 - Deployed pages score **≥ 95** on Lighthouse Performance, Accessibility and SEO
 - Zero client JavaScript shipped — the CV format switch is CSS `:has()`, the nav is real routes
-- Exactly one third-party origin at runtime: Google Fonts, preconnected and loaded with
-  `display=swap`. No other external request.
+- **Zero third-party origins at runtime.** Everything, fonts included, is served from the Pages
+  origin; the only outbound requests a visitor makes are the ones they click.
 - Build completes in under a minute on CI, including `astro check` and the base-path gate
 - Images are sized for their slot; no single asset larger than 300 KB
 
@@ -87,8 +88,8 @@ Minimal NFR set for v1 and early life as a published site.
 
 - The site sets no cookies and runs no analytics, tag manager, or tracker
 - No visitor data is collected, because nothing is able to collect it
-- The one third-party request is the Google Fonts stylesheet; it is the single place a visitor's IP
-  reaches a party other than GitHub, and that trade is recorded in `06-conventions.md` §4
+- No third party sees a visitor at all. The fonts were the last exception and are now self-hosted
+  (`06-conventions.md` §4), so a visitor's IP reaches GitHub and nobody else
 - Shared LinkedIn URLs are stripped of `rcm`, which identifies the recipient of a share
 - The email address in `site.socials` is published deliberately; nothing else personal is
 
