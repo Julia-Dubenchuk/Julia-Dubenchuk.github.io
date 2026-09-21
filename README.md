@@ -7,9 +7,9 @@ Built with [Astro](https://astro.build) (static output), deployed to GitHub Page
 on every push to `main`. The look comes from the **Organic** design system, and
 the page structure from the **Yuliia Blog** design.
 
-> **Not share-ready yet.** The CV files are placeholders and the projects are
-> the design's sample content. See *Filling in content*, and
-> [`docs/00-tech-spec.md`](docs/00-tech-spec.md) §6 for what "finished" means.
+> **Live** at <https://julia-dubenchuk.github.io/>. Every content slot is filled;
+> see [`docs/00-tech-spec.md`](docs/00-tech-spec.md) §6 for what still counts as
+> unverified.
 
 ## Running it
 

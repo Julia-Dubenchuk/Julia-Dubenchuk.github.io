@@ -120,7 +120,7 @@ An unfilled slot ships as an obviously labelled placeholder. Nothing ships as un
 **Why:** silent filler survives to production because nobody notices it. A loud placeholder is a
 visible debt. The CV and the project grid have since been paid off — the CV files are real, and
 the sample projects were deleted rather than left standing, because one real project says more
-than one real project beside three invented ones. The OG image is the last slot still carrying it.
+than one real project beside three invented ones. No slot carries a placeholder today.
 
 ## 9. Commit hygiene, because the repository is public
 

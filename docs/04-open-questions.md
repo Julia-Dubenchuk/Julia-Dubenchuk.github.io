@@ -41,8 +41,8 @@ answer of `-` means genuinely undecided, not forgotten.
 - Q: When do the real CV files replace the placeholders in `public/cv/`?
 - A: Done. Both formats carry the real CV, with no phone number in either.
 - Q: When are the OG image and favicon replaced?
-- A: The favicon is done — the Ryzhulya icon, at 16, 32 and 180px. The OG image is still the
-  design's placeholder.
+- A: Both done. The favicon is the Ryzhulya icon at 16, 32 and 180px; the OG card is rendered
+  from the site's own palette, fonts and icon at 1200x630.
 - Q: Is one photograph and its caption enough non-technical content?
 - A: No — the criterion is currently only partly met and the section reads thin (00 §6,
   criterion 5). What it grows into is open.
