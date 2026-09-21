@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <!--
-  Source for public/og-image.png — the 1200x630 card social networks show when
+  Source for public/og-card.png — the 1200x630 card social networks show when
   the site is shared.
 
   Rendered rather than drawn, so the card uses the site's real fonts and token
@@ -20,7 +20,7 @@
   then optimise it into place:
 
     python3 -c "from PIL import Image; \
-      Image.open('card.png').convert('RGB').save('public/og-image.png', optimize=True)"
+      Image.open('card.png').convert('RGB').save('public/og-card.png', optimize=True)"
 
   Snap-packaged browsers cannot write outside $HOME, so run it from a home
   directory if the screenshot fails with a permission error. Colours below are

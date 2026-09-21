@@ -22,7 +22,10 @@ const {
 // A base-relative og:image fails silently on every social scraper — no build
 // error, no console warning, just a blank card.
 const canonical = absoluteUrl(path);
-const ogImage = absoluteUrl("/og-image.png");
+// og-card.png, not og-image.png: LinkedIn caches a preview against the image
+// URL, and it had already cached the placeholder that used to live there. A
+// filename it has never seen is the only reliable way to invalidate that.
+const ogImage = absoluteUrl("/og-card.png");
 ---
 
 <!doctype html>
