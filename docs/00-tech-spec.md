@@ -79,28 +79,29 @@ existing surfaces.
 
 v1 is done when all of the following are true. Current status is honest, not aspirational.
 
-- [ ] **Deploy.** Site builds with zero errors and deploys to GitHub Pages via the committed
-  Actions workflow; the production URL loads over HTTPS — *never deployed*
+- [x] **Deploy.** Site builds with zero errors and deploys to GitHub Pages via the committed
+  Actions workflow; the production URL loads over HTTPS — *live at
+  `https://julia-dubenchuk.github.io/` since 2026-09-21*
 - [x] **About prose.** About renders long-form prose from a single editable content file, not a
   bullet list
 - [x] **CV download.** A visible CV download serves a real file from a fixed path; replacing it
   needs no code change
 - [x] **Projects from data.** Projects render from a structured data file; adding one needs no
   template edit — *one real project; the sample entries have been removed rather than replaced*
-- [ ] **Personal content.** Non-technical, personal content is present and visually distinct from
-  the project grid — *partly met: thin; currently one photograph and its caption*
+- [x] **Personal content.** Non-technical, personal content is present and visually distinct from
+  the project grid — *the About prose carries the cats and the Ryzhulya project, beside the
+  photograph and its caption*
 - [x] **Honest placeholders.** Every unfilled content slot ships as an obvious labelled
   placeholder, never unmarked filler
 - [ ] **No horizontal scroll** at 375, 768 and 1280px — *believed met, unverified at real viewports*
 - [ ] **Lighthouse.** Deployed pages score ≥ 95 on Performance, Accessibility and SEO —
-  *unverified: requires a deploy*
+  *unverified; the deploy it was waiting on now exists, so this can be measured*
 - [x] **Page metadata.** Every page has a title, meta description, Open Graph tags and a favicon —
   *the OG image and favicon are placeholders*
 - [x] **Extensible.** A later content surface can be added without restructuring the existing pages
 
-**The remaining work is content, not code:** replace two placeholder images and grow the personal,
-non-technical half. Every one of those is the personal-voice work §2 reserves to Yuliia. The CV,
-the first project and the deploy are done.
+**The remaining work is content, not code:** replace two placeholder images — the OG social preview
+and the favicon. The CV, the About prose, the first project and the deploy are done.
 
 ## 7. Constraints that shaped it
 

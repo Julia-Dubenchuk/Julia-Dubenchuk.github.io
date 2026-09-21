@@ -43,6 +43,14 @@ export const site = {
   /** Caption beside the small round photo in the About sidebar. */
   catCaption: "And this one, who supervises every commit.",
 
+  /** The sidebar card for the Ryzhulya project. */
+  patreon: {
+    kicker: "Ryzhulya's little world",
+    note: "Cozy content featuring my ginger cat Ryzhulya and the other animals in our little world.",
+    cta: "See it on Patreon",
+    href: "https://www.patreon.com/cw/RyzhulyasLittleWorld",
+  },
+
   cv: {
     fileStem: "Yuliia_Dubenchuk_CV",
     updated: "August 2026",

@@ -47,7 +47,7 @@ Nothing here requires editing a component.
 | What | Where |
 |---|---|
 | About prose | `src/content/about/about.md` |
-| Name, intro, skill tags, CV blurb, socials, 404 copy | `src/data/site.ts` |
+| Name, intro, skill tags, CV blurb, Patreon card, socials, 404 copy | `src/data/site.ts` |
 | CV summary table | `cvRows` in `src/data/site.ts` |
 | Projects | `src/content/projects.yaml` |
 | Writing published elsewhere | `src/data/elsewhere.ts` |

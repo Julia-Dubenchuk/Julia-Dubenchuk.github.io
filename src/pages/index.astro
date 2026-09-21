@@ -40,6 +40,16 @@ const tagClass = { accent: "tag-accent", "accent-2": "tag-accent-2", outline: "t
           </div>
           <p class="cat__caption">{site.catCaption}</p>
         </div>
+
+        <div class="card elev-sm">
+          <p class="card-kicker">{site.patreon.kicker}</p>
+          <p class="sidecard__note">{site.patreon.note}</p>
+          <a
+            class="btn btn-secondary btn-block"
+            href={site.patreon.href}
+            target="_blank"
+            rel="noopener noreferrer">{site.patreon.cta}</a>
+        </div>
       </aside>
     </section>
   </div>

@@ -33,7 +33,8 @@
 
 Scores are a judgement against the doc set, not an instrument reading. Goal and constraints score
 high because `00-tech-spec.md` §2 states the product in one sentence and `06-conventions.md` gives
-each invariant a reason; context scores lowest because the site has never been deployed.
+each invariant a reason; context scored lowest when this spec was written, because the site had
+not yet been deployed — it has been since 2026-09-21.
 
 ## Topology
 
@@ -45,8 +46,8 @@ each invariant a reason; context scores lowest because the site has never been d
 | Routing & layout | active | 4 routes in `src/pages/`, one `BaseLayout.astro` | AC6 |
 | Design system | active (vendored) | `organic.css` read-only, page layer in `site.css` | AC9 |
 | Path-safety gate | active | `scripts/check-paths.mjs` in `prebuild` and in CI | AC3 |
-| Deploy pipeline | committed, never run | `.github/workflows/deploy.yml` → GitHub Pages | AC10 |
-| Documentation | active, uncommitted | `docs/00`–`06`, `decisions/` | AC12 |
+| Deploy pipeline | active | `.github/workflows/deploy.yml` → GitHub Pages | AC10 |
+| Documentation | active | `docs/00`–`06`, `decisions/` | AC12 |
 | Notes surface | deferred | two-vault Obsidian design, out of v1 (00 §5) | — |
 | Tests | absent | no test runner installed; the build is the only gate | — |
 
@@ -162,10 +163,10 @@ personal-voice writing `00-tech-spec.md` §2 reserves to her.
 - [x] **AC8** Origin and base path have exactly one definition; `astro.config.ts` imports them
 - [ ] **AC9** `organic.css` is byte-identical to upstream — unverifiable here, no upstream copy is
       vendored alongside it for comparison
-- [ ] **AC10** A push to `main` publishes to Pages over HTTPS — the workflow is committed but has
-      never run
+- [x] **AC10** A push to `main` publishes to Pages over HTTPS — verified live at
+      `https://julia-dubenchuk.github.io/`
 - [x] **AC11** The built site is well under the 1 GB Pages limit — 168 KB
-- [ ] **AC12** The spec set and decision log are committed — `docs/` is still untracked in git
+- [x] **AC12** The spec set and decision log are committed
 
 ## Assumptions Exposed & Resolved
 
@@ -193,8 +194,7 @@ personal-voice writing `00-tech-spec.md` §2 reserves to her.
   two PNGs in `src/assets/` optimised to WebP at build.
 - Docs `00`–`06`, plus `decisions/0001-astro-static-on-github-pages.md`, carry the
   reasoning; `decisions/0002-obsidian-two-vaults.md` is still unwritten.
-- Git: one commit (`04a6126`, "Initial commit"); the whole working tree, `docs/` included, is
-  still untracked.
+- Git: the whole tree is committed and pushed to `origin/main`, and every push deploys.
 
 ## Ontology (Key Entities)
 

@@ -38,9 +38,10 @@ The page must also carry the name, the intro line, and a CV card — all of them
 The About page must show skill tags from `site.tags`, each with a tone that selects its tint from
 the design system's tag ramp.
 
-It must also carry at least one deliberately non-professional element — today a photograph and its
-caption (`site.catCaption`) — and that element must be visually distinct from the professional
-content rather than mixed into it.
+It must also carry at least one deliberately non-professional element — today a photograph with
+its caption (`site.catCaption`) and a sidebar card for the Ryzhulya project (`site.patreon`), whose
+button is the one outbound link on the page. These must be visually distinct from the professional
+content rather than mixed into it, and the card must not outrank the CV as a call to action.
 
 ## FR-003 Project grid
 

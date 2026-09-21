@@ -68,8 +68,9 @@ answer of `-` means genuinely undecided, not forgotten.
   drift (06 §5). **Settles when** it either catches something real once, or costs more attention
   than the seam is worth.
 - Q: Where are the Lighthouse scores measured, and by what?
-- A: - The ≥ 95 target is fixed (00 §6, criterion 8; 03, Performance) but no tooling exists and
-  the site has never been deployed. **Settles when** the first deploy happens.
+- A: - The ≥ 95 target is fixed (00 §6, criterion 8; 03, Performance). The site is deployed now,
+  so the measurement is possible; no tooling has been chosen. **Settles when** a run is done
+  against the live URL and a way to repeat it is picked.
 - Q: Is the Node version pinned?
 - A: Yes. `.nvmrc` holds `v22.14.0` and CI reads it through `node-version-file`, so local and CI
   cannot drift.
