@@ -55,7 +55,7 @@ Nothing here requires editing a component.
 | Your photo | replace `src/assets/yuliia-avatar.png` |
 | The cat | replace `src/assets/cat-tight.png` |
 | CV files | replace `public/cv/Yuliia_Dubenchuk_CV.pdf` and `.docx` |
-| Social preview image | replace `public/og-image.png` — 1200×630 |
+| Social preview image | `public/og-image.png` — 1200×630, regenerated from `scripts/og/card.html` |
 | Favicon | replace `public/favicon-16.png`, `-32.png` and `-180.png` |
 
 **Adding a project** — copy a block in `projects.yaml`. Each needs a unique `id`,

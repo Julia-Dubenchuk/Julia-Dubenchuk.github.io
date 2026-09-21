@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+  Source for public/og-image.png — the 1200x630 card social networks show when
+  the site is shared.
+
+  Rendered rather than drawn, so the card uses the site's real fonts and token
+  colours instead of approximating them. The faces are the self-hosted woff2
+  files the site itself serves, so this works offline and cannot drift from
+  what a visitor sees.
+
+  To regenerate after changing the copy or the mark:
+
+    chromium --headless=new --disable-gpu --hide-scrollbars \
+      --force-device-scale-factor=1 --window-size=1200,630 \
+      --screenshot=card.png "file://$PWD/scripts/og/card.html"
+
+  then optimise it into place:
+
+    python3 -c "from PIL import Image; \
+      Image.open('card.png').convert('RGB').save('public/og-image.png', optimize=True)"
+
+  Snap-packaged browsers cannot write outside $HOME, so run it from a home
+  directory if the screenshot fails with a permission error. Colours below are
+  the literal values of --color-bg, --color-neutral-900, --color-accent-700,
+  --color-neutral-800 and --color-neutral-700; a headless screenshot cannot
+  read the site's custom properties, so changing a token means changing them
+  here too.
+-->
+<style>
+  @font-face {
+    font-family: "Caprasimo"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("../../src/assets/fonts/caprasimo-2Ukp8D.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Figtree"; font-style: normal; font-weight: 400 700; font-display: block;
+    src: url("../../src/assets/fonts/figtree-m4S9DQ.woff2") format("woff2");
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; background: #f5ead8;
+    font-family: "Figtree", system-ui, sans-serif;
+    display: flex; align-items: center; gap: 64px; padding: 0 80px; overflow: hidden;
+  }
+  .text { flex: 1; }
+  h1 {
+    font-family: "Caprasimo", Georgia, serif; font-weight: 400;
+    font-size: 76px; line-height: 1.05; color: #2e2b25; letter-spacing: -0.5px;
+  }
+  .role { margin-top: 22px; font-size: 32px; line-height: 1.35; font-weight: 600; color: #8c491a; }
+  .line { margin-top: 20px; font-size: 25px; line-height: 1.45; color: #474238; max-width: 620px; }
+  .url {
+    margin-top: 40px; font-size: 21px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase; color: #645c50;
+  }
+  .mark { width: 380px; height: 380px; flex: none; }
+  .mark img { width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <h1>Yuliia Dubenchuk</h1>
+    <p class="role">Front-End Developer &middot; React &amp; TypeScript</p>
+    <p class="line">7+ years building complex web applications, growing into full-stack with Node.js and NestJS.</p>
+    <p class="url">julia-dubenchuk.github.io</p>
+  </div>
+  <div class="mark"><img src="mark.png" alt=""></div>
+</body>
+</html>

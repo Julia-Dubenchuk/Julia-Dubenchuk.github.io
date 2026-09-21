@@ -191,7 +191,8 @@ personal-voice writing `00-tech-spec.md` §2 reserves to her.
 - `astro.config.ts` imports `SITE_ORIGIN` and `BASE_PATH` from `src/data/urls.ts`.
 - `.github/workflows/deploy.yml` builds on push to `main`, runs the path gate, and deploys with
   `enablement: true` so the first deploy needs no Settings toggle.
-- Assets: `public/cv/` (the real CV, PDF + DOCX), `public/og-image.png`, `public/favicon-{16,32,180}.png`,
+- Assets: `public/cv/` (the real CV, PDF + DOCX), `public/og-image.png` (rendered from
+  `scripts/og/card.html`), `public/favicon-{16,32,180}.png`,
   two PNGs in `src/assets/` optimised to WebP at build.
 - Docs `00`–`06`, plus `decisions/0001-astro-static-on-github-pages.md`, carry the
   reasoning; `decisions/0002-obsidian-two-vaults.md` is still unwritten.
