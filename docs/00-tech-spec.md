@@ -96,9 +96,9 @@ v1 is done when all of the following are true. Current status is honest, not asp
 - [x] **No horizontal scroll** at 375, 768 and 1280px — *measured on all four pages at all three
   widths: `scrollWidth` equals the viewport in every case*
 - [x] **Lighthouse.** Deployed pages score ≥ 95 on Performance, Accessibility and SEO —
-  *100 / 100 / 100 measured on the built site. The first run against production scored 89 on
-  Performance and 95 on Accessibility; self-hosting the fonts and one contrast fix closed both
-  gaps (06 §4). Pending a re-run against the deploy.*
+  *measured on the deploy: `/` 98 / 100 / 100, `/activities` and `/cv` 100 / 100 / 100. The
+  first run scored 89 on Performance and 95 on Accessibility; self-hosting the fonts and three
+  contrast corrections closed both gaps (06 §4).*
 - [x] **Page metadata.** Every page has a title, meta description, Open Graph tags and a favicon —
   *all real; the OG card is generated from the site's own palette, fonts and icon*
 - [x] **Extensible.** A later content surface can be added without restructuring the existing pages

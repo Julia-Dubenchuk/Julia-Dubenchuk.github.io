@@ -77,6 +77,16 @@ a:hover { color: var(--color-accent-600); text-decoration: underline; }
    so the pill looks the same. Lighthouse flagged this one and nothing else. */
 .tag-outline { color: var(--color-accent-700); }
 
+/* Two more of the same, found by auditing the other pages rather than the home
+   page: .btn-ghost draws its label in the base terracotta, which is 2.69:1 on
+   the card ground (accent-700 reads 5.09:1), and the checked .seg-opt puts
+   cream on terracotta at 3.03:1 — the same pairing the block above already
+   corrects for .btn-primary, so it takes the same ink at 4.60:1. Both keep
+   every fill colour exactly. Delete with the block above to restore the design
+   verbatim. */
+.btn-ghost { color: var(--color-accent-700); }
+.seg-opt:has(input:checked) { color: var(--color-text); }
+
 /* — shared page furniture — */
 .section { padding: var(--space-8) 0 0; }
 .page-title { font-family: var(--font-heading); font-weight: 400; font-size: 46px; line-height: 1.05; margin: 0 0 var(--space-3); }

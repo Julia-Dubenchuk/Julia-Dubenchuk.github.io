@@ -69,15 +69,18 @@ There are exactly three today, all marked in the code:
    text, but below the 4.5:1 an accessibility audit applies to small labels. They now use ink and
    the deep ramp steps, which keeps every fill colour exactly and reads 4.6–5.1:1.
 
-3. **`.tag-outline`'s label**, in the same block. The system draws it in the base terracotta,
-   which is 3.03:1 on the cream ground at 11px — the exact case the standing rule below forbids.
-   It takes `--color-accent-700` (5.72:1); the border keeps the base colour, so the pill is
-   unchanged to look at. Lighthouse flagged this one and nothing else, and fixing it took
-   Accessibility from 95 to 100.
+3. **Three small accent labels**, in the same block, all found by auditing rather than by eye.
+   `.tag-outline` draws its label in the base terracotta — 3.03:1 on the cream ground at 11px,
+   the exact case the standing rule below forbids — and takes `--color-accent-700` (5.72:1).
+   `.btn-ghost` does the same on the card ground at 2.69:1 and takes the same step (5.09:1).
+   The checked `.seg-opt` puts cream on terracotta at 3.03:1, the pairing deviation 2 already
+   corrects for `.btn-primary`, so it takes the same ink (4.60:1). Every fill colour and
+   border is unchanged; only the label ink moves. Together these took Accessibility from 95 to
+   100 on all three pages.
 
 **The rule: a fourth deviation gets documented the same way** — a marked block, the measurement
-that justified it, and a sentence saying what deleting the block restores. An undocumented deviation is
-indistinguishable from a mistake six months later.
+that justified it, and a sentence saying what deleting the block restores. An undocumented
+deviation is indistinguishable from a mistake six months later.
 
 **Contrast, as a standing rule:** small terracotta text takes `--color-accent-700` (5.7:1 on the
 cream ground), never the base terracotta (3.0:1). Body copy uses `--color-neutral-800` (8.9:1),
