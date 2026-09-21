@@ -37,12 +37,9 @@ a:hover { color: var(--color-accent-600); text-decoration: underline; }
 }
 .brand { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; color: inherit; }
 .brand:hover { text-decoration: none; }
-.brand__mark {
-  width: 34px; height: 34px; border-radius: 999px; background: var(--color-accent);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-heading); color: var(--color-bg);
-  font-size: 16px; line-height: 1; padding-top: 2px; flex: none;
-}
+.brand__mark { width: 44px; height: 44px; flex: none; }
+/* The icon is a circle with its own transparent surround, so nothing here crops it. */
+.brand__mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .brand__name { font-family: var(--font-heading); font-size: 19px; }
 
 .tabs { display: flex; gap: var(--space-1); align-items: center; flex-wrap: wrap; }

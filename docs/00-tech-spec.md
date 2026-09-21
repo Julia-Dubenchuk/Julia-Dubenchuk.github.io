@@ -97,11 +97,11 @@ v1 is done when all of the following are true. Current status is honest, not asp
 - [ ] **Lighthouse.** Deployed pages score ≥ 95 on Performance, Accessibility and SEO —
   *unverified; the deploy it was waiting on now exists, so this can be measured*
 - [x] **Page metadata.** Every page has a title, meta description, Open Graph tags and a favicon —
-  *the OG image and favicon are placeholders*
+  *the favicon is real; the OG image is still a placeholder*
 - [x] **Extensible.** A later content surface can be added without restructuring the existing pages
 
-**The remaining work is content, not code:** replace two placeholder images — the OG social preview
-and the favicon. The CV, the About prose, the first project and the deploy are done.
+**The remaining work is content, not code:** replace one placeholder image, the OG social preview.
+The CV, the About prose, the favicon, the first project and the deploy are done.
 
 ## 7. Constraints that shaped it
 

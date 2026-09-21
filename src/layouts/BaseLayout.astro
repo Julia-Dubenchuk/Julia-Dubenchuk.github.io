@@ -32,7 +32,9 @@ const ogImage = absoluteUrl("/og-image.png");
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
+    <link rel="icon" type="image/png" sizes="16x16" href={withBase("/favicon-16.png")} />
+    <link rel="apple-touch-icon" href={withBase("/favicon-180.png")} />
 
     {/* The Organic system's two faces. This is the <link> form of the @import
         the vendored stylesheet opens with — see the note atop organic.css. */}

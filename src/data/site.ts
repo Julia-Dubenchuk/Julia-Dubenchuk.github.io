@@ -15,9 +15,6 @@ export interface SocialLink {
 
 export const site = {
   name: "Yuliia Dubenchuk",
-  /** Shown in the round mark beside the name in the header. */
-  initial: "Y",
-
   metaTitle: "Yuliia Dubenchuk — Front-End Developer",
   metaDescription:
     "Front-End Developer · React & TypeScript · 7+ years · growing into full-stack with Node.js and NestJS.",

@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { site } from "../data/site";
+import brandMark from "../assets/brand-mark.png";
 import { nav } from "../data/nav";
 import { withBase } from "../data/urls";
 
@@ -20,7 +22,9 @@ const isCurrent = (href: string) => {
 
 <header class="masthead">
   <a class="brand" href={withBase("/")}>
-    <span class="brand__mark" aria-hidden="true">{site.initial}</span>
+    <span class="brand__mark" aria-hidden="true">
+      <Image src={brandMark} alt="" widths={[44, 88]} sizes="44px" loading="eager" />
+    </span>
     <span class="brand__name">{site.name}</span>
   </a>
   <nav class="tabs" aria-label="Primary">
