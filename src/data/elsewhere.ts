@@ -26,6 +26,20 @@ export const elsewhereLead =
 
 export const elsewhere: ElsewherePost[] = [
   {
+    title: "Why TypeScript's any is not the enemy",
+    date: "2026-09-17",
+    href: "https://www.linkedin.com/posts/juliadubenchuk_typescript-webdevelopment-softwaredevelopment-activity-7506258568006868994-mm3z",
+    excerpt:
+      "If a programming language gives you a tool, there is probably a reason for it to exist. any is a good example.",
+  },
+  {
+    title: "Building a real mental model of TypeScript",
+    date: "2026-09-11",
+    href: "https://www.linkedin.com/posts/juliadubenchuk_typescript-webdevelopment-ai-activity-7504152589123346433-zlPe",
+    excerpt:
+      "I've been writing TypeScript since 2019. And only now, I'm starting to build a real mental model of TypeScript.",
+  },
+  {
     title: "TypeScript 7 benchmarks on a NestJS project",
     date: "2026-09-02",
     href: "https://www.linkedin.com/posts/juliadubenchuk_typescript-typescript7-webdevelopment-activity-7500890884939415552-UN4K",
